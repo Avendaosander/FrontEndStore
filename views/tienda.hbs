@@ -1,0 +1,11 @@
+<main class="contenedor">
+   <h1>Nuestros Productos</h1>
+
+   <section class="grid"> <!-- Este representa una parte o una sección, coherente de un documento. -->
+      {{#each franelas }}
+         {{> Product item=this}}
+      {{/each}}
+      <article class="grafico grafico-camisas"></article>
+      <article class="grafico grafico-node"></article>
+   </section>
+</main>
