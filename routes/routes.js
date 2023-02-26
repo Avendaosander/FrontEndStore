@@ -1,25 +1,8 @@
-const express = require('express')
+const express = require('express');
+const traerFranelas = require('../controllers/tiendaController');
 const router = express.Router()
 
-router.get('/', (req, res) => {
-   const franelas = [
-      {src: '/img/1.jpg', nombre: 'VueJS', price: '$25'},
-      {src: '/img/2.jpg', nombre: 'AngularJS', price: '$25'},
-      {src: '/img/3.jpg', nombre: 'ReactJS', price: '$30'},
-      {src: '/img/4.jpg', nombre: 'Redux', price: '$20'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-      {src: '/img/5.jpg', nombre: 'NodeJS', price: '$30'},
-   ]
-   res.render('tienda', {franelas})
-})
+router.get('/', traerFranelas)
 
 router.get('/nosotros', (req, res) => {
    res.render('nosotros');

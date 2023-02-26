@@ -1,11 +1,11 @@
 const express = require('express')
 const { create } = require('express-handlebars');
-// const cors = require("cors");
 // const cookieSession = require("cookie-session");
-const dotenv = require('dotenv').config();
-const router = require("./routes/routes");
 // const config = require("./config.js");
+const router = require("./routes/routes");
 const path = require("path");
+require('dotenv').config();
+require('./database/db');
 
 const app = express()
 
@@ -19,12 +19,6 @@ console.log('JS BackEnd')
 app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
 app.set("views", "./views");
-
-// var corsOptions = {
-//     origin: process.env.APP_HOST+":"+process.env.APP_PORT
-// };
-
-// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.set('trust proxy', 1) 
@@ -38,8 +32,6 @@ app.use(express.urlencoded({ extended: true }));
 // );
 
 app.use("/", router);
-
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 module.exports = app;
