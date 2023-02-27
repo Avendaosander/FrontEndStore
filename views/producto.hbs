@@ -1,23 +1,27 @@
+{{> Header}}
+{{> Navbar}}
+
 {{#with franela}}
    <main class="contenedor">
       <h2>{{nombre}}</h2>
 
       <section class="camisa">
-         <img class="camisa_imagen" src={{src}} alt="Imagen del producto" >
+         <img src={{src}} alt="Imagen del producto" >
 
          <article class="camisa_contenido">
                <p>{{descripcion}}</p>
-               <p>{{price}}</p>
+               <p class="precio">Precio: ${{price}}</p>
+               <p id="total">Total: ${{price}}</p>
 
-               <form action="" method="" class="formulario">
-                  <select class="formulario_campo" name="" id=""> <!-- Es un control que permite al usuario escoger entre distintas opciones. -->
+               <form action="/producto" method="post" class="formulario">
+                  <select class="formulario_campo" name="talla" id="talla"> <!-- Es un control que permite al usuario escoger entre distintas opciones. -->
                      <option disabled selected>--Seleccionar Talla--</option> <!-- Es una opción dentro de un control <select>, en otras palabras es una opción de una lista de opciones. -->
                      <option>Chica</option>
                      <option>Mediana</option>
                      <option>Grande</option>
                   </select>
 
-                  <input class="formulario_campo" type="number" placeholder="Cantidad" min="1" max="12">
+                  <input class="formulario_campo" name="cantidad" id="cantidad" type="number" placeholder="Cantidad" min="1" max="12" value="0">
                   
                   <input class="formulario_submit" type="submit" value="Agregar al Carrito">
                </form>

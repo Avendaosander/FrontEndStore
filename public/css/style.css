@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 :root{
    --blanco: #fff;
    --secundario: #ffce00;
@@ -62,9 +64,8 @@ header{
    font-size: 60px;
    font-weight: 700;
    color: rgb(231, 218, 36);
-   margin: 20px 0;
+   margin: 15px 0;
 }
-
 
 /* NAVEGACIÓN */
 nav{
@@ -111,7 +112,8 @@ li img{
       width: 100%;
    }
 }
-/* CONTENIDO */
+
+/* TIENDA */
 /* GRID */
 .grid{
    display: grid;
@@ -126,9 +128,11 @@ li img{
 /* PRODUCTOS */
 .producto{
    background: rgba(28, 16, 71, 0.521);
+   border-radius: 19px;
    padding: 5px;
 }
 .producto_imagen{
+   border-radius: 15px;
    width: 100%;
 }
 .producto_nombre{
@@ -154,9 +158,11 @@ li img{
 .grafico-camisas{
    grid-row: 2 / 3;
    background-image: url(../img/grafico1.jpg);
+   border-radius: 19px;
 }
 .grafico-node{
    background-image: url(../img/grafico2.jpg);
+   border-radius: 19px;
    grid-row: 8 / 9;
 }
 @media (min-width: 768px){
@@ -169,7 +175,8 @@ li img{
    }
 }
 
-/* GRID NOSOTROS */
+/* NOSOTROS */
+/* GRID */
 .grid-nosotros{
    display: grid;
    grid-template-rows: repeat(1,1fr);
@@ -192,7 +199,6 @@ li img{
 .nosotros-texto p{
    font-size: 27px;
 }
-
 
 /* BLOQUES NOSOTROS*/
 .bloques{
@@ -219,12 +225,24 @@ li img{
 }
 
 /* PRODUCTO */
+.camisa img{
+   border-radius: 15px;
+}
 @media (min-width:768px){
    .camisa{
        display: grid;
        grid-template-columns: repeat(2, 1fr);
        column-gap: 32px;
    }
+}
+.precio{
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 20px;
+}
+#total{
+   display: flex;
+   justify-content: flex-end;
 }
 .formulario{
    margin-top: 15px;
@@ -342,4 +360,123 @@ footer{
    .footer_parrafo{
       font-size: 20px;
    }
+}
+
+/* LOGIN */
+.contenedorAuth{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 90vh;
+}
+
+.container{
+   padding: 40px;
+   border-radius: 20px;
+   border: 8px solid #223243;
+   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.form{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   gap: 30px;
+}
+
+.signinForm .form.signin{
+   display: flex;
+}
+
+.form h2{
+   color: #fff;
+   font-weight: 800;
+   font-size: 40px;
+   letter-spacing: 0.1em;
+   margin: 10px 0;
+}
+
+.inputBox{
+   position: relative;
+   width: 400px;
+}
+
+.inputBox input{
+   padding: 12px 10px 12px 50px;
+   border: none;
+   width: 100%;
+   background: #223243;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   color: #fff;
+   font-weight: 400;
+   border-radius: 25px;
+   font-size: 15px;
+   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+   transition: 0.5s;
+   outline: none;
+}
+
+.inputBox span{
+   position: absolute;
+   left: 0;
+   padding: 8px 19px 13px 55px;
+   pointer-events: none;
+   font-size: 20px;
+   font-weight: 300;
+   transition: 0.5s;
+   letter-spacing: 0.05em;
+   color: rgba(255, 255, 255, 0.5);
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+   color: #00dfc4;
+   border: 1px solid #00dfc4;
+   background: #223243;
+   transform: translateX(25px) translateY(-7px);
+   font-size: 10px;
+   padding: 0 8px;
+   border-radius: 10px;
+   letter-spacing: 0.1em;
+   -webkit-transform: translateX(25px) translateY(-7px);
+   -moz-transform: translateX(25px) translateY(-7px);
+   -ms-transform: translateX(25px) translateY(-7px);
+   -o-transform: translateX(25px) translateY(-7px);
+}
+
+.inputBox input:valid,
+.inputBox input:focus{
+   border: 1px solid #00dfc4;
+}
+
+.inputBox i{
+   position: absolute;
+   font-size: 18px;
+   top: 11px;
+   left: 20px;
+   padding: 2px 0;
+   padding-right: 8px;
+   color: #00dfc4;
+   border-right: 1px solid #00dfc4;
+}
+
+.inputBox input[type="submit"]{
+   background: #00dfc4;
+   color: #223243;
+   padding: 10px 0;
+   font-weight: 800;
+   cursor: pointer;
+   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.container .form p{
+   color: rgba(255, 255, 255, 0.582);
+   font-size: 15px;
+   font-weight: 400
+}
+
+.container .form p a{
+   font-weight: 400;
+   color: #fff;
 }

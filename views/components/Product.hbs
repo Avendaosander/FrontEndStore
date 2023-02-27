@@ -1,10 +1,10 @@
 <article class="producto">
-   <a href="/producto">
+   <a href="/producto/{{item._id}}">
       <figure>
          <img class="producto_imagen" src={{item.src}} alt="Imagen camisa">
          <figcaption class="producto_nombre">{{item.nombre}}</figcaption>
          <div>
-            <p class="producto_precio">{{item.price}}</p>
+            <p class="producto_precio">${{item.price}}</p>
          </div>
       </figure>
    </a>

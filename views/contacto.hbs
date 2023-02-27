@@ -1,27 +1,30 @@
+{{> Header}}
+{{> Navbar}}
+
 <main class="contenedor m-top">
-   <form action="" method="" class="form-contacto"> <!-- Usado para insertar un formulario dentro del documento. -->
+   <form action="/contacto" method="post" class="form-contacto"> <!-- Usado para insertar un formulario dentro del documento. -->
       <fieldset> <!-- Organiza en grupo los campos de un formulario. -->
          <legend>Contactanos</legend> <!-- Define un titulo para un grupo de campos de un formulario. -->
          
          <div class="grid-form">
             <div class="campo">
                <label for="nombre">Nombre</label> <!-- Se usa mayormente para asociar un texto a un control de formulario -->
-               <input class="input-text" type="text" id="nombre" placeholder="Tú nombre" required> <!-- Representa un campo de datos que se asocia a un control que permite a los usuarios editar su valor, este es uno de los mas complejos de HTML por su gran variedad de combinaciones de tipos de entrada, según su tipo de campo. -->
+               <input class="input-text" type="text" id="nombre" name="nombre" placeholder="Tú nombre" required> <!-- Representa un campo de datos que se asocia a un control que permite a los usuarios editar su valor, este es uno de los mas complejos de HTML por su gran variedad de combinaciones de tipos de entrada, según su tipo de campo. -->
             </div>
             
             <div class="campo">
                <label for="apellido">Apellido</label>
-               <input class="input-text" type="text" id="apellido" placeholder="Tú apellido" required>
+               <input class="input-text" type="text" id="apellido" name="apellido" placeholder="Tú apellido" required>
             </div>
             
             <div class="campo">
                <label for="email">Email</label>
-               <input class="input-text" type="email" id="Email" placeholder="Tú email" required>
+               <input class="input-text" type="email" id="email" name="email" placeholder="Tú email" required>
             </div>
 
             <div class="campo">
                <label for="message">Mensaje</label>
-               <textarea class="input-text" id="message" minlength="18" placeholder="Deja tu mensaje aqui" required></textarea> <!-- Es un campo de texto para que usuarios ingresen una gran cantidad de textos sin limitaciones. -->
+               <textarea class="input-text" id="message" name="mensaje" minlength="18" placeholder="Deja tu mensaje aqui" required></textarea> <!-- Es un campo de texto para que usuarios ingresen una gran cantidad de textos sin limitaciones. -->
             </div>
          </div>
          <div class="alinear-derecha">
