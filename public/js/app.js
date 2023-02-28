@@ -1,5 +1,3 @@
-console.log('JS FrontEnd')
-
 const url = window.location.origin;
 const urlActual = document.URL;
 const navTienda = document.getElementById('tienda') 

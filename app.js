@@ -37,8 +37,6 @@ const hbs = create({
    partialsDir: ["views/components"]
 });
 
-console.log('JS BackEnd')
-
 app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
 app.set("views", "./views");
