@@ -1,32 +1,68 @@
 const express = require('express');
-const { crearUser, loginUser } = require('../controllers/authController');
-const { traerFranelas, verFranela, crearContacto } = require('../controllers/tiendaController');
+const { body } = require('express-validator')
+const { crearUser, loginUser, loginForm, registerForm, cerrarSesion } = require('../controllers/authController');
+const { traerFranelas, verFranela, crearContacto, contactoForm, nosotros } = require('../controllers/tiendaController');
+const verificarUser = require('../middlewares/verificarUser');
 const router = express.Router()
 
-router.get('/', traerFranelas)
+router.get('/', verificarUser, traerFranelas)
 
-router.get('/login', (req, res) =>{
-   res.render('login');
-});
+router.get('/register', registerForm);
+router.post('/register',[
+   body("nombre", "Ingrese un nombre")
+      .trim()
+      .notEmpty()
+      .escape(),
+   body("email", "Ingrese un email válido")
+      .trim()
+      .isEmail(),
+   body("password", "Contraseña con 8 o más carácteres")
+      .trim()
+      .isLength({ min: 8 })
+      .escape()
+      .custom((value, { req }) => {
+         if (value !== req.body.repeatPassword) {
+            throw new Error("Contraseñas no coinciden");
+         } else {
+            return value;
+         }
+      }),
+], crearUser);
 
-router.post('/login', loginUser);
+router.get('/login', loginForm);
+router.post('/login',[
+   body("email", "Ingrese un email válido")
+      .trim()
+      .isEmail(),
+   body("password", "Contraseña con 8 o más carácteres")
+      .trim()
+      .isLength({ min: 8 })
+      .escape()
+], loginUser);
 
-router.get('/register', (req, res) =>{
-   res.render('register');
-});
+router.get('/nosotros', verificarUser, nosotros)
 
-router.post('/register', crearUser);
+router.get('/contacto', verificarUser, contactoForm)
+router.post('/contacto', verificarUser, [
+   body("nombre", "Ingrese un nombre")
+      .trim()
+      .notEmpty()
+      .escape(),
+   body("apellido", "Ingrese un apellido")
+      .trim()
+      .notEmpty()
+      .escape(),
+   body("email", "Ingrese un email válido")
+      .trim()
+      .isEmail(),
+   body("mensaje", "Mensaje con 18 o más carácteres")
+      .trim()
+      .isLength({ min: 18 })
+      .escape()
+], crearContacto)
 
-router.get('/nosotros', (req, res) => {
-   res.render('nosotros');
-})
+router.get('/producto/:id', verificarUser, verFranela)
 
-router.get('/contacto', (req, res) => {
-   res.render('contacto');
-})
-
-router.get('/producto/:id', verFranela)
-
-router.post('/contacto', crearContacto)
+router.get('/logout', cerrarSesion);
 
 module.exports = router

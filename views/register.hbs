@@ -1,31 +1,29 @@
-<main class="contenedorAuth">
-   <div class="container">
-      <form action="/register" method="post" class="form signup">
-         <h2>Sign Up</h2>
-         <div class="inputBox">
-            <input name="nombre" type="text" required="required">
-            <i class="fa-regular fa-user"></i>
-            <span>Username</span>
-         </div>
-         <div class="inputBox">
-            <input name="email" type="email" required="required">
-            <i class="fa-regular fa-envelope"></i>
-            <span>Email</span>
-         </div>
-         <div class="inputBox">
-            <input name="password" type="text" required="required">
-            <i class="fa-solid fa-lock"></i>
-            <span>Create Password</span>
-         </div>
-         <div class="inputBox">
-            <input type="text" required="required">
-            <i class="fa-solid fa-lock"></i>
-            <span>Confrim Password</span>
-         </div>
-         <div class="inputBox">
-            <input type="submit" value="Create Account">
-         </div>
-         <p>Ya estas registrado/a ? <a href="/login" class="login">Ingresa</a></p>
-      </form>
-   </div>
+<main class="container cont-register">
+   <form action="/register" method="post" class="form signup">
+      <h2>Sign Up</h2>
+      <div class="inputBox">
+         <input name="nombre" type="text" required="required">
+         <i class="fa-regular fa-user"></i>
+         <span>Username</span>
+      </div>
+      <div class="inputBox">
+         <input name="email" type="text" required="required">
+         <i class="fa-regular fa-envelope"></i>
+         <span>Email</span>
+      </div>
+      <div class="inputBox">
+         <input name="password" type="password" required="required">
+         <i class="fa-solid fa-lock"></i>
+         <span>Create Password</span>
+      </div>
+      <div class="inputBox">
+         <input name="repeatPassword" type="password" required="required">
+         <i class="fa-solid fa-lock"></i>
+         <span>Confirm Password</span>
+      </div>
+      <div class="inputBox">
+         <input type="submit" value="Create Account">
+      </div>
+      <p>Ya estas registrado/a ? <a href="/login" class="login">Ingresa</a></p>
+   </form>
 </main>

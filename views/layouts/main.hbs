@@ -7,23 +7,30 @@
    <title>FrontEnd Store</title> <!-- En esta etiqueta se coloca el título de la página web el cual se muestra en la barra de pestañas de un navegador. -->
 
    {{!--------------------------------------------------------------------}}
-   <link rel="preload" href="/css/normalize.css" as="style">
+   {{!-- <link rel="preload" href="/css/normalize.css" as="style"> --}}
    <link rel="stylesheet" href="/css/normalize.css">
    {{!--------------------------------------------------------------------}}
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   {{!-- <link rel="preconnect" href="https://fonts.googleapis.com"> --}}
+   {{!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
-
+   {{!--------------------------------------------------------------------}}
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+   {{!--------------------------------------------------------------------}}
    <link rel="icon" type="image/favicon.ico" href="../../img/favicon.ico"/>
-   
    {{!--------------------------------------------------------------------}}
    <link rel="stylesheet" href="/css/style.css"> <!-- Mayormente usado para enlazar una hoja de estilos, pero esta no es su única función. -->
 </head>
 
 <body> <!-- Define el contenido del documento HTML. -->
 
+   {{> Header}}
+   {{> Navbar}}
+
+   {{!-- Proximamente Modal de Errores --}}
+   {{!-- {{#each mensajes}}
+      <div class="alert">{{this.msg}}</div>
+   {{/each}} --}}
+   
    {{{body}}}
      
   <footer> <!-- Este es el pie de pagina de un sitio web o alguna sección o artículo. -->

@@ -24,7 +24,19 @@ const verFranela = async(req, res) => {
    }
 }
 
+const nosotros = (req, res) => {
+   res.render('nosotros');
+}
+
+const contactoForm = (req, res) => {
+   res.render('contacto', {"mensajes": req.flash('mensajes')});
+}
 const crearContacto = async(req, res) => {
+   const errors = validationResult(req)
+   if(!errors.isEmpty) {
+      req.flash("mensajes", errors.array());
+      return res.redirect('/contacto')
+   }
    const { nombre, apellido, email, mensaje } = req.body;
    try {
       const contacto = new Contacto({nombre, apellido, email, mensaje});
@@ -40,5 +52,7 @@ const crearContacto = async(req, res) => {
 module.exports = {
    traerFranelas,
    verFranela,
+   nosotros,
+   contactoForm,
    crearContacto
 }

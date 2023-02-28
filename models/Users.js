@@ -34,7 +34,7 @@ userSchema.pre('save', async function(next){
 
    } catch (error) {
       console.log(error);
-      next();
+      throw new Error('Error al modificar la contraseña');
    }
 })
 
