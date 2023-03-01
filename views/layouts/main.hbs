@@ -26,10 +26,17 @@
    {{> Header}}
    {{> Navbar}}
 
-   {{!-- Proximamente Modal de Errores --}}
-   {{!-- {{#each mensajes}}
-      <div class="alert">{{this.msg}}</div>
-   {{/each}} --}}
+   {{!-- Modal de Errores --}}
+   {{#if mensajes}}
+      <section class="errores">
+         {{#each mensajes}}
+            <div id="modal">
+               <p class="msg-error">{{this.msg}}</p>
+               <i class="fa-solid fa-xmark close"></i>
+            </div>
+         {{/each}}
+      </section>
+   {{/if}}
    
    {{{body}}}
      

@@ -499,3 +499,40 @@ footer{
    font-weight: 400;
    color: #fff;
 }
+
+/* Modal de Errores */
+.errores{
+   position: absolute;
+   bottom: 100px;
+   right: 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   width: 200px;
+   height: auto;
+}
+#modal{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: rgba(34, 50, 67, 0.9);
+   border-radius: 10px;
+   height: auto;
+   width: 100%;
+   margin-top: 20px;
+}
+
+.msg-error{
+   color: #fff;
+   padding: 10px 15px;
+   margin: 10px;
+   font-size: 15px;
+}
+.close{
+   position: absolute;
+   right: -25px;
+   color: #fff;
+   width: 40px;
+   margin-right: 10px;
+   cursor: pointer;
+}

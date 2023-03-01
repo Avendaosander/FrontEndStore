@@ -12,11 +12,12 @@ router.post('/register',[
    body("nombre", "Ingrese un nombre")
       .trim()
       .notEmpty()
+      .isLength({ min: 2 })
       .escape(),
    body("email", "Ingrese un email válido")
       .trim()
       .isEmail(),
-   body("password", "Contraseña con 8 o más carácteres")
+   body("password", "Contraseña debe tener 8 o más carácteres")
       .trim()
       .isLength({ min: 8 })
       .escape()
@@ -34,7 +35,7 @@ router.post('/login',[
    body("email", "Ingrese un email válido")
       .trim()
       .isEmail(),
-   body("password", "Contraseña con 8 o más carácteres")
+   body("password", "Contraseña debe tener 8 o más carácteres")
       .trim()
       .isLength({ min: 8 })
       .escape()
@@ -55,7 +56,7 @@ router.post('/contacto', verificarUser, [
    body("email", "Ingrese un email válido")
       .trim()
       .isEmail(),
-   body("mensaje", "Mensaje con 18 o más carácteres")
+   body("mensaje", "Mensaje debe tener 18 o más carácteres")
       .trim()
       .isLength({ min: 18 })
       .escape()

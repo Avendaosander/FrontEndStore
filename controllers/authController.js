@@ -49,7 +49,7 @@ const loginUser = async(req, res) => {
       // Crea la sesion de usuario a traves de passport
       req.login(user, function(err){
          if(err) throw new Error('Error al craer la sesion');
-         console.log('Aqui estoy');
+         // console.log('Aqui estoy');
          return res.status(200).redirect('/');
       });
    } catch (error) {
