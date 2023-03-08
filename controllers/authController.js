@@ -1,6 +1,5 @@
 const Users = require('../models/Users')
 const { validationResult } = require('express-validator');
-const { request } = require('../app');
 
 const registerForm =  (req, res) =>{
    res.render('register', {"mensajes": req.flash('mensajes')});

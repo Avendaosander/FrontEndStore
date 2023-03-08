@@ -7,7 +7,7 @@ const franelasSchema = new Schema({
       unique: true,
       required: true
    },
-   name: {
+   nombre: {
       type: String,
       unique: true,
       required: true
